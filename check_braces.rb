@@ -4,11 +4,11 @@ def check_braces(expressions)
   key = hash.keys
   value = hash.values
   expressions.each do |set|
-    if value.include? set[0]
+    set.each_char do |char|
+    if value.include? char && stack.empty?
       puts 0
       next
     end
-    set.each_char do |char|
       if key.include? char
         stack << char
       elsif value.include? char
@@ -18,7 +18,7 @@ def check_braces(expressions)
         end
       end
     end
-    puts 1 if stack.empty?
+    puts 1 if stack.empty? # rather than check for the zero cases, I need to check for the "puts 1" scenario
   end
 end
 

@@ -6,7 +6,7 @@ def check_braces(expressions)
   expressions.each do |set|
     if value.include? set[0]
       puts 0
-      next                
+      next
     end
     set.each_char do |char|
       if key.include? char
@@ -22,4 +22,4 @@ def check_braces(expressions)
   end
 end
 
-check_braces( ["(())","[]({})","([])","{()[]}","([)]"] )
+check_braces( ["(())","[]({})","([])","{()[]}","([)]", "[])"] )

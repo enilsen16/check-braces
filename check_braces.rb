@@ -6,7 +6,6 @@ def check_braces(expressions)
   value = hash.values
   expressions.each do |set|
     set.each_char do |char|
-      count += 1
       if key.include? char
         stack << char
       elsif value.include? char
@@ -17,9 +16,10 @@ def check_braces(expressions)
           puts 0
           break
         end
+      count += 1
       end
     end
-    puts 1 if stack.empty? && set.length == count
+    puts 1 if stack.empty? && (set.length / 2) == count
     count = 0
   end
 end

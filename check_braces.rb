@@ -9,6 +9,7 @@ def check_braces(expressions)
       if key.include? char
         stack << char
       elsif value.include? char
+        count += 1
         if stack.empty?
           puts 0
           break
@@ -16,7 +17,6 @@ def check_braces(expressions)
           puts 0
           break
         end
-      count += 1
       end
     end
     puts 1 if stack.empty? && (set.length / 2) == count
@@ -24,4 +24,4 @@ def check_braces(expressions)
   end
 end
 
-check_braces( ["(())","[)]({})","{()[]}","([)]", "[]))"] )
+check_braces( ["(())","[)]({})","{((())[]}","([[])]", "[]))"] )

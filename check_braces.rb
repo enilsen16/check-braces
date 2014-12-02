@@ -24,4 +24,4 @@ def check_braces(expressions)
   end
 end
 
-check_braces( ["(())","[)]({})","{((())[]}","([[])]", "[]))"] )
+check_braces( ["(())","[)]({})","{((())[]}","([[])]", "[))]"] )
